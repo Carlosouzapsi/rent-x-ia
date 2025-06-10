@@ -13,9 +13,7 @@ describe('Create Category Repository', () => {
     expect(category).toBeTruthy();
   });
 
-  // TODO
-
-  it.skip('should not be able to create a new category with same name', () => {
+  it('should not be able to create a new category with same name', () => {
     const categoriesRepository = new CategoriesRepository();
     categoriesRepository.create({
       name: 'Category Test',
