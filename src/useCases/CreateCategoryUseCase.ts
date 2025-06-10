@@ -1,0 +1,3 @@
+class CreateCategoryUseCase {}
+
+export { CreateCategoryUseCase };

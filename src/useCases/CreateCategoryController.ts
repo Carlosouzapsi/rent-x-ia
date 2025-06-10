@@ -1,0 +1,3 @@
+class CreateCategoryController {}
+
+export { CreateCategoryController };
