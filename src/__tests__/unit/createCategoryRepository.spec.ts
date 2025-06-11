@@ -1,4 +1,4 @@
-import { CategoriesRepository } from '../../modules/cars/repositories/CategoriesRepository';
+import { CategoriesRepository } from '../../modules/cars/repositories/implementations/CategoriesRepository';
 
 describe('Create Category Repository', () => {
   it('should be able to create a new category', () => {
