@@ -34,8 +34,13 @@
     "test:unit": "jest --testMatch='**/tests/unit/**/*.spec.ts'"
   },
   "dependencies": {
+    "@types/multer": "^1.4.13",
+    "@types/swagger-ui-express": "^4.1.8",
+    "csv-parse": "^5.6.0",
     "express": "^5.1.0",
+    "multer": "^2.0.1",
     "supertest": "^7.1.1",
+    "swagger-ui-express": "^5.0.1",
     "uuid": "^11.1.0"
   }
 }
