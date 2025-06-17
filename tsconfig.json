@@ -5,7 +5,6 @@
     "lib": ["es2021"],
     "outDir": "./dist",
     "rootDir": "./src",
-    // "strict": true, responsabilidade fica para o typescript
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -16,7 +15,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "noImplicitAny": false,
+    "strict": false
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
