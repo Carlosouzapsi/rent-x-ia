@@ -36,7 +36,7 @@
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
     "migration:run": "migration:run -d ./src/database/index.ts",
     "migration:revert": "migration:revert -d ./src/database/index.ts",
-    "migration:create": "migration:create -t ./src/database/migrations"
+    "migration:create": "migration:create -t"
   },
   "dependencies": {
     "@types/multer": "^1.4.13",

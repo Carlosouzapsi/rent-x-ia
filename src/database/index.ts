@@ -10,6 +10,5 @@ export const AppDataSource = new DataSource({
   database: 'rentx',
   migrations: ['./src/database/migrations/*.ts'],
   entities: ['./src/modules/**/entities/*.ts'],
-
   logging: true,
 });
