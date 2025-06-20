@@ -8,6 +8,14 @@ interface IAuthenticateUserDTO {
   password: string;
 }
 
+interface IResponse {
+  user: {
+    name: string;
+    email: string;
+  };
+  token: string;
+}
+
 @injectable()
 class AuthenticateUserUseCase {
   constructor(
@@ -15,7 +23,7 @@ class AuthenticateUserUseCase {
     private usersRepository: IUsersRepository
   ) {}
 
-  async execute({ email, password }: IAuthenticateUserDTO): Promise<string> {
+  async execute({ email, password }: IAuthenticateUserDTO): Promise<IResponse> {
     const user = await this.usersRepository.findByEmail(email);
 
     if (!user) {
@@ -27,13 +35,21 @@ class AuthenticateUserUseCase {
     if (!passwordMatch) {
       throw new Error('User or password incorrect');
     }
-
+    // Esse valor 1234567890 é o secret do token mover daqui para o .env
     const token = sign({}, '1234567890', {
       subject: user.id,
       expiresIn: '1d',
     });
 
-    return token;
+    const tokenReturn: IResponse = {
+      token,
+      user: {
+        name: user.name,
+        email: user.email,
+      },
+    };
+
+    return tokenReturn;
   }
 }
 
