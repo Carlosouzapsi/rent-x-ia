@@ -1,7 +1,8 @@
 import { User } from '../entities/User';
-import { ICreateUserDTO } from './implementations/dtos/ICreateUserDTO';
+import { ICreateUserDTO } from '../dtos/ICreateUserDTO';
 
 interface IUsersRepository {
+  comparePassword(password: string, password1: string): unknown;
   create({
     name,
     email,

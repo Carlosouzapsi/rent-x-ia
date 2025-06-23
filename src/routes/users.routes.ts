@@ -1,11 +1,14 @@
 import { Router } from 'express';
 import { CreateUserController } from '../modules/accounts/useCases/CreateUserController';
+import { AuthenticateUserController } from '@/modules/accounts/createSession/authenticateUser/AuthenticateUseController';
 
 const usersRoutes = Router();
 
 const createUserController = new CreateUserController();
+const authenticateUserController = new AuthenticateUserController();
 
 // @ts-ignore
 usersRoutes.post('/', createUserController.handle);
+usersRoutes.post('/sessions', authenticateUserController.handle);
 
 export { usersRoutes };
