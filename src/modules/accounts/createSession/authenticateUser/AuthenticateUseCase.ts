@@ -42,7 +42,7 @@ class AuthenticateUseCase {
     expiresIn: '1d',
   });
 
-  return { user, token }
+  return { user, token };
 }
 
 export { AuthenticateUseCase };
