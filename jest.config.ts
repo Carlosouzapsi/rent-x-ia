@@ -13,7 +13,7 @@ const config: Config = {
   bail: true,
 
   // The directory where Jest should store its cached dependency information
-  // cacheDirectory: "C:\\Users\\Carlos\\AppData\\Local\\Temp\\jest",
+  // cacheDirectory: "/private/var/folders/4q/sxlxtph513z6px1300rck8040000gp/T/jest_dy",
 
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
@@ -29,7 +29,7 @@ const config: Config = {
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
-  //   "\\\\node_modules\\\\"
+  //   "/node_modules/"
   // ],
 
   // Indicates which provider should be used to instrument code for coverage
@@ -157,14 +157,11 @@ const config: Config = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  testMatch: [
-    '**/__tests__/**/*.?([mc])[jt]s?(x)',
-    '**/?(*.)+(spec|test).?([mc])[jt]s?(x)',
-  ],
+  testMatch: ['**/*.spec.ts'],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
-  //   "\\\\node_modules\\\\"
+  //   "/node_modules/"
   // ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
@@ -181,8 +178,8 @@ const config: Config = {
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
-  //   "\\\\node_modules\\\\",
-  //   "\\.pnp\\.[^\\\\]+$"
+  //   "/node_modules/",
+  //   "\\.pnp\\.[^\\/]+$"
   // ],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them

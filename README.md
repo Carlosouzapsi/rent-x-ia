@@ -1,6 +1,6 @@
-# rent-x-ia
+# API Rest de aluguel de carros desenvolvida utilizando o IDE Cursor IA
 
-SOLID
+# SOLID (Utilização dos príncipios do solid para construção do projeto)
 
 - S => SRP - Single Responsability Principle(Príncipio de Reponsabilidade)
 
@@ -11,3 +11,10 @@ SOLID
 - I => ISP - Interface Segregation Principle (Principio de Segregação de Interface)
 
 - D => DIP - Dependency Inversion Principle (Princio de inversão de Dependência)
+
+# Testes Unitários
+
+# Testes de Integração
+
+-> routes -> controllers -> useCases -> repository
+<- repository <- useCases <- controllers <- routes
