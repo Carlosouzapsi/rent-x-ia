@@ -31,11 +31,9 @@
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "build": "tsc",
-    "dev": "ts-node-dev --inspect --respawn --ignore-watch node_modules --transpile-only src/server.ts",
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --respawn --ignore-watch node_modules --transpile-only src/server.ts",
     "test": "jest",
-    "test:integration": "jest --testMatch='**/tests/integration/**/*.spec.ts'",
-    "test:unit": "jest --testMatch='**/tests/unit/**/*.spec.ts'",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
+    "typeorm": "ts-node-dev tsconfig-paths/register ./node_modules/typeorm/cli",
     "migration:run": "migration:run -d ./src/database/index.ts",
     "migration:revert": "migration:revert -d ./src/database/index.ts",
     "migration:create": "migration:create -t"
