@@ -23,7 +23,7 @@ class AuthenticateUseCase {
     @inject('UsersRepository')
     private userRepository: IUsersRepository
   ) {}
-  // @r
+  // @ts-ignore
   async execute({ email, password }: IRequest): Promise<IResponse> {
     const user = await this.userRepository.findByEmail(email);
 
@@ -36,13 +36,14 @@ class AuthenticateUseCase {
     if (!passwordMatch) {
       throw new AppError('Email or password incorrect');
     }
-  }
-  const token = sign({}, '1234567890', {
-    subject: user.id,
-    expiresIn: '1d',
-  });
+    // @ts-ignore
+    const token = sign({}, '1234567890', {
+      subject: user.id,
+      expiresIn: '1d',
+    });
 
-  return { user, token };
+    return { user, token };
+  }
 }
 
 export { AuthenticateUseCase };

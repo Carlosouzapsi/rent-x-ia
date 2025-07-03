@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { ListSpecificationUseCase } from './ListSpecificationUseCase';
+import { ListSpecificationUseCase } from '../listSpecifications/ListSpecificationUseCase';
 import { container } from 'tsyringe';
 class ListSpecificationsController {
   async handle(request: Request, response: Response): Promise<Response> {

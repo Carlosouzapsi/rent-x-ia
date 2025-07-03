@@ -1,8 +1,8 @@
 import { inject, injectable } from 'tsyringe';
-import { IUsersRepository } from '../../repositories/IUsersRepository';
+import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
-import { AppError } from '../../../../errors/AppError';
+import { AppError } from '@errors/AppError';
 
 interface IAuthenticateUserDTO {
   email: string;
@@ -28,7 +28,7 @@ class AuthenticateUserUseCase {
     const user = await this.usersRepository.findByEmail(email);
 
     if (!user) {
-      throw new AppError('User or password incorrect');
+      throw new AppError('Email or password incorrect');
     }
 
     const passwordMatch = await compare(password, user.password);
