@@ -1,7 +1,8 @@
-import { AppError } from '../errors/AppError';
-import { UsersRepository } from '../modules/accounts/repositories/implementations/UsersRepository';
 import { NextFunction, Request, Response } from 'express';
 import { verify } from 'jsonwebtoken';
+import { container } from 'tsyringe';
+import { UsersRepository } from '../../../../modules/accounts/infra/typeorm/repositories/UsersRepository';
+import { AppError } from '../../../../shared/errors/AppError';
 
 interface IPayload {
   sub: string;
@@ -25,7 +26,7 @@ export async function ensureAuthenticated(
 
     const { sub: user_id } = decoded as IPayload;
 
-    const usersRepository = new UsersRepository();
+    const usersRepository = container.resolve(UsersRepository);
 
     const user = await usersRepository.findById(user_id);
 

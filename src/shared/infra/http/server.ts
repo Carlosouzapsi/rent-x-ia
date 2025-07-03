@@ -1,12 +1,12 @@
 import 'reflect-metadata';
 import express, { NextFunction } from 'express';
 import swaggerUi from 'swagger-ui-express';
-import { AppError } from './errors/AppError';
+import { AppError } from '../../errors/AppError';
 import 'express-async-errors';
 import { router } from './routes';
-import swaggerFile from './swagger.json';
-import { AppDataSource } from './database';
-import './shared/container';
+import swaggerFile from '../../../swagger.json';
+import { AppDataSource } from '../typeorm';
+import '../../container';
 
 AppDataSource.initialize()
   .then(() => {
